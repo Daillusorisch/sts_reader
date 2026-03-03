@@ -1,0 +1,3 @@
+import numpy as np
+
+def read_sts(path: str) -> tuple[np.ndarray, np.ndarray]: ...

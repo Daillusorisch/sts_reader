@@ -1,0 +1,20 @@
+[package]
+name = "sts_reader"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "sts_reader"
+crate-type = ["cdylib"]
+
+[dependencies]
+numpy = "0.28"
+pyo3 =  { version = "0.28", features = ["extension-module"] }
+mimalloc = { version = "*", features = ["v3"] }
+memmap2 = "0.9"
+lexical-core = "1"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
