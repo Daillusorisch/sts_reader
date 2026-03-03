@@ -11,9 +11,11 @@ crate-type = ["cdylib"]
 [dependencies]
 numpy = "0.28"
 pyo3 =  { version = "0.28", features = ["extension-module"] }
-mimalloc = { version = "*", features = ["v3"] }
 memmap2 = "0.9"
 lexical-core = "1"
+
+[target.'cfg(not(all(target_os = "linux", any(target_arch = "aarch64", target_arch = "arm"))))'.dependencies]
+mimalloc = { version = "*", features = ["v3"] }
 
 [profile.release]
 lto = "fat"
