@@ -4,6 +4,8 @@ build-backend = "maturin"
 
 [project]
 name = "sts_reader"
+description = "A Python library for reading STS files using Rust and PyO3."
+version = "0.1.0"
 requires-python = ">=3.8"
 classifiers = [
     "Programming Language :: Rust",
@@ -19,3 +21,6 @@ license-files = ["LICEN[CS]E*"]
 
 [tool.maturin]
 features = ["pyo3/extension-module"]
+
+[project.urls]
+Homepage = "https://github.com/Daillusorisch/sts_reader"
