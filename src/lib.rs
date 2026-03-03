@@ -7,10 +7,10 @@ use numpy::{
 use pyo3::{exceptions::PyValueError, prelude::*};
 use std::fs::File;
 
-#[cfg(not(all(target_os = "linux", any(target_arch = "aarch64", target_arch = "arm"))))]
+#[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
 use mimalloc::MiMalloc;
 
-#[cfg(not(all(target_os = "linux", any(target_arch = "aarch64", target_arch = "arm"))))]
+#[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
 #[global_allocator]
 static GLOBAL: MiMalloc = MiMalloc;
 
